@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tablelist = () => {
+const TableList = () => {
 
     const clients = [
         {id: 1, name: "John Doe", email: "Johndoe@gmail.com", job: "Developer", rate: "100", isActive: true},
@@ -32,9 +32,15 @@ const Tablelist = () => {
                 <td>{client.job}</td>
                 <td>{client.rate}</td>
                 <td>
-                    <button className={`btn rounded-full w-20 ${client.isActive ? 'btn-primary' : 'btn-outline'}`}>
+                    <button className={`btn rounded-full w-20 ${client.isActive ? 'btn-primary' : 'btn-outline btn-primary'}`}>
                         {client.isActive ? 'Active' : 'Inactive'}
                     </button>
+                </td>
+                <td>
+                    <button className='btn btn-secondary'>Update</button>
+                </td>
+                <td>
+                    <button className='btn btn-accent'>Delete</button>
                 </td>
             </tr>
             ))}
@@ -46,4 +52,4 @@ const Tablelist = () => {
   )
 }
 
-export default Tablelist
+export default TableList
