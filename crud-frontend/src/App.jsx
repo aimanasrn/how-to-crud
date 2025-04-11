@@ -11,6 +11,7 @@ function App() {
   
   const handleOpen = (mode) => {
     setIsOpen(true)
+    setModalMode(mode)
   }
 
   const handleSubmit = () =>{
@@ -25,7 +26,7 @@ function App() {
     <>
       <NavBar onOpen={() => handleOpen('add')} />
       <TableList />
-      <ModalForm />
+      <ModalForm isOpen={isOpen} onClose={() => setIsOpen(false)} OnSubmit={handleSubmit} mode={modalMode}/>
     </>
   )
 }
